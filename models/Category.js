@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 //create Category model
-class Category extends Model {}
+class Category extends Model { }
 
 //define table columns
 Category.init(
@@ -14,12 +14,12 @@ Category.init(
       primaryKey: true,
       autoIncrement: true
 
+    },
+    category_name: {
+      type: DataTypes.STRING,
+      allowsNull: false
+    },
   },
-  category_name: {
-    type: DataTypes.STRING,
-    allowsNull: false
-  },
-},
   {
     sequelize,
     timestamps: false,
